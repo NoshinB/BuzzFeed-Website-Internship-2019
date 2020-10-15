@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    
+<!--Navigation bar-->
+    <head>
+        <title>BuzzFeed</title>
+        <link rel="stylesheet" href="stylesheet/style.css" />
+    </head>
+        <header>
+            <nav>
+                <a href="index.html"><img class="displayed" src="images/logo.png" alt="Buzzfeed logo"></a>
+                <div class= "container">
+                    <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="business.html">Business</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="politics.html">Politics</a></li>
+                    <li><a href="tech.html">Tech</a></li>
+                    <li><a href="world.html">World</a></li>
+                     <button onClick = "toggleNightMode()" id= togBut>Night Mode</button>
+                    <input type="button" value="Print this page" onClick="window.print()">
+                    </ul>
+                </div>
+            </nav>
+               <!--Search bar- search this site-->
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search this site..." title="Type in a name">
+            <ul id="myUL">
+                <li><a href="politics.html">Obama</a></li>
+                <li><a href="business.html">Twitter</a></li>
+                <li><a href="tech.html">Google</a></li>
+                <li><a href="news.html" >Investigation</a></li>
+                <li><a href="world.html">Earthquake</a></li>
+                <li><a href="tech.html">Propaganda</a></li>
+            </ul>
+
+            <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+                }
+            }
+            </script>
+        </header>
+
+<!--Search BuzzFeed Site-->
+        <div id="search">
+            <script>
+            (function() {
+                var cx = '000523762610079890588:28qnyuhcmaq';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+            <gcse:search></gcse:search>
+        </div>
+<!--Night mode-->
+        <div id="mydiv">
+         <script> 
+                function toggleNightMode() {
+                    var color = document.getElementById('mydiv').style.color;
+                    var backgroundColor = document.getElementById('mydiv').style.backgroundColor;
+                    if (color == "black" && backgroundColor == "white") {
+                        document.getElementById('mydiv').style.color="white";
+                        document.getElementById('mydiv').style.backgroundColor="black";
+                        document.getElementById('mydiv').style.fontFamily="Arial";
+                    } 
+                    else {
+                        document.getElementById('mydiv').style.color="black";
+                        document.getElementById('mydiv').style.backgroundColor="white";
+                    }
+                }
+            </script> 
+        <body>
+        <div id="mydiv">
+         <script> 
+                function toggleNightMode() {
+                    var color = document.getElementById('mydiv').style.color;
+                    var backgroundColor = document.getElementById('mydiv').style.backgroundColor;
+                    if (color == "black" && backgroundColor == "white") {
+                        document.getElementById('mydiv').style.color="white";
+                        document.getElementById('mydiv').style.backgroundColor="black";
+                    } 
+                    else {
+                        document.getElementById('mydiv').style.color="black";
+                        document.getElementById('mydiv').style.backgroundColor="white";
+                    }
+                }
+            </script>  
+        
+    <div id="container"> 
+        <div id="politics">Nothing Yet</div>
+        <div id="img_page"></div>
+        <p id="lin"></p>
+        <script src="story.js"></script>
+    </div>
+        </div>
+    </body>
+</html>
